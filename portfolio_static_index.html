@@ -1,0 +1,216 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Devasye Sachdeva — Portfolio</title>
+<meta name="description" content="Portfolio — Devasye Sachdeva | AI/ML Engineer & Full-Stack Developer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed;
+    --glass: rgba(255,255,255,0.03);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;}
+  body{
+    margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background: linear-gradient(180deg,#071020 0%, #081022 50%, #071029 100%);
+    color:#e6eef8; -webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:1100px;margin:32px auto;padding:24px;}
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
+  nav{display:flex;gap:12px;align-items:center}
+  nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+  nav a:hover{color:white;background:rgba(255,255,255,0.03)}
+  .cta{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;padding:8px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+  .hero{display:flex;gap:28px;align-items:center;margin-top:40px}
+  .hero-left{flex:1}
+  h1{font-size:40px;margin:0;line-height:1.02}
+  p.lead{color:var(--muted);margin-top:12px;max-width:56ch}
+  .buttons{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+  .photo{width:220px;height:220px;border-radius:18px;background:linear-gradient(180deg,#132033,#0b1826);display:flex;align-items:center;justify-content:center;font-weight:700;color:#cfe9ff}
+  .skills{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .chip{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;font-size:13px}
+
+  /* sections */
+  section{margin-top:32px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .project{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));min-height:140px}
+  .project h3{margin:0 0 8px 0}
+  .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+  footer{margin-top:36px;padding:22px 0;color:var(--muted);text-align:center;font-size:13px}
+  .small{font-size:13px;color:var(--muted)}
+  /* responsive */
+  @media (max-width:900px){
+    .grid{grid-template-columns:1fr;}
+    .hero{flex-direction:column-reverse;align-items:flex-start}
+    .photo{width:160px;height:160px}
+    nav{display:none}
+  }
+
+  /* mobile menu */
+  .mobile-toggle{display:none}
+  @media (max-width:900px){ .mobile-toggle{display:block;color:var(--muted);background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px 10px;border-radius:10px} }
+  .mobile-nav{display:none;padding:12px;margin-top:12px;gap:8px;background:transparent}
+  .mobile-nav a{display:block;color:var(--muted);padding:8px 10px;border-radius:8px}
+  .show{display:flex;flex-direction:column}
+  /* smooth anchor */
+  html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">DS</div>
+        <div>
+          <div style="font-weight:800">Devasye Sachdeva</div>
+          <div class="small">AI/ML Engineer • Full-Stack Developer</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Get in touch</a>
+      </nav>
+
+      <button class="mobile-toggle" id="toggle">Menu ▾</button>
+    </header>
+
+    <div id="mobileNav" class="mobile-nav">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <main id="home">
+      <div class="hero">
+        <div class="hero-left">
+          <h1>Hi — I’m <span style="color:var(--accent)">Devasye</span><br><span style="font-weight:500">I build AI products & clean web experiences</span></h1>
+          <p class="lead">AI/ML Engineer and Full-Stack Developer focused on building practical NLP systems, backend services, and polished UI. Published research on hospital navigation systems.</p>
+
+          <div class="buttons">
+            <a class="cta" href="#projects">See projects</a>
+            <a class="card" href="#contact">Contact me</a>
+            <a class="card" href="#" onclick="downloadResume()">Download resume</a>
+          </div>
+
+          <div class="skills" aria-hidden="true">
+            <div class="chip">Python</div>
+            <div class="chip">Transformers</div>
+            <div class="chip">Flask</div>
+            <div class="chip">NetworkX</div>
+            <div class="chip">Gradio</div>
+            <div class="chip">Figma</div>
+          </div>
+        </div>
+
+        <div class="photo card">
+          <!-- Replace this block with <img src="path" /> after downloading -->
+          <div style="text-align:center">
+            <div style="font-size:20px">Your Photo</div>
+            <div style="color:var(--muted);font-size:12px">Replace when ready</div>
+          </div>
+        </div>
+      </div>
+
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 style="margin:0 0 12px 0">Selected projects</h2>
+        <div class="grid">
+          <article class="project card">
+            <h3>Hospital Navigation & AI Assistant</h3>
+            <p class="small">AI-powered navigation and illness-support system with TTS and a trained database of 44 illnesses. Published in IJRTI.</p>
+            <div class="tags">
+              <span class="chip">Python</span>
+              <span class="chip">Transformers</span>
+              <span class="chip">NetworkX</span>
+            </div>
+          </article>
+
+          <article class="project card">
+            <h3>Heatgen Product Page — M&S India</h3>
+            <p class="small">Figma-driven product page design and handoff for Heatgen & Heatgen Plus during internship.</p>
+            <div class="tags">
+              <span class="chip">Figma</span>
+              <span class="chip">UI/UX</span>
+            </div>
+          </article>
+
+          <article class="project card">
+            <h3>AI Tools — Monks Media</h3>
+            <p class="small">Flask microservices, automation tools, and ML utilities used by clients.</p>
+            <div class="tags">
+              <span class="chip">Flask</span>
+              <span class="chip">APIs</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2 style="margin:0 0 12px 0">Experience & Education</h2>
+        <div class="card" style="display:flex;gap:16px;flex-direction:column">
+          <div>
+            <strong>AI Engineer Intern — Monks Media</strong>
+            <div class="small">Built REST APIs, Flask microservices, and AI automation pipelines.</div>
+          </div>
+          <div>
+            <strong>UI/UX Intern — M&S India</strong>
+            <div class="small">Designed Heatgen product pages; collaborated with dev teams for integration.</div>
+          </div>
+          <div>
+            <strong>B.Tech (CSE — AI & ML) — SRM Institute</strong>
+            <div class="small">2021 — 2025</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 style="margin:0 0 12px 0">Contact</h2>
+        <div class="card" style="display:flex;gap:20px;flex-direction:column">
+          <div>
+            <strong>Email</strong>
+            <div class="small">devasyesachdeva@gmail.com</div>
+          </div>
+          <div>
+            <strong>GitHub</strong>
+            <div class="small"><a href="https://github.com/devasye007" style="color:var(--accent)">github.com/devasye007</a></div>
+          </div>
+
+          <form onsubmit="alert('This is a demo form — replace with your form endpoint');return false" style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <input placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+            <input placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+            <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+            <button class="cta" type="submit" style="width:160px">Send message</button>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Devasye Sachdeva — Built with care. • Edit this file to update content.
+      </footer>
+    </main>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('toggle').addEventListener('click', function(){
+    document.getElementById('mobileNav').classList.toggle('show');
+  });
+  function downloadResume(){
+    // replace with your resume path if uploaded
+    alert('Put resume.pdf in the same folder and set link to /resume.pdf');
+  }
+</script>
+</body>
+</html>
